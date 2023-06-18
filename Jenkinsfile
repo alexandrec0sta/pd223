@@ -6,9 +6,10 @@ pipeline {
      stages {
         stage("Build FrontEnd") {
             steps {
-                sh "cd fe-nasa"
-                sh "npm install"
-                sh "npm run build"
+                dir("${env.WORKSPACE}/fe-nasa") {
+                  sh "npm install"
+                  sh "npm run build"
+                }
             }
         }
     }
