@@ -4,8 +4,9 @@ pipeline {
          nodejs 'nodejs'
      }
      stages {
-        stage("Build") {
+        stage("Build FrontEnd") {
             steps {
+                sh "cd fe-nasa"
                 sh "npm install"
                 sh "npm run build"
             }
