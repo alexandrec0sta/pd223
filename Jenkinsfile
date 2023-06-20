@@ -1,16 +1,22 @@
 pipeline {
      agent any
+     environment {
+          registry = "alexandrec0sta/pd2223"
+          registryCredential = 'dockerhub_id'
+          dockerImage = ''
+     }
      tools {
          nodejs 'nodejs'
+         docker 'docker'
      }
      stages {
-        stage("Build FrontEnd") {
-            steps {
-                dir("${env.WORKSPACE}/fe-nasa") {
-                  sh "npm install"
-                  sh "npm run build"
-                }
-            }
-        }
+          stage('Cloning our Git') {
+               steps {
+                    git 'https://github.com/YourGithubAccount/YourGithubRepository.git'
+               }
+          }
+          stage("Build Image") {
+               dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          }
     }
 }
