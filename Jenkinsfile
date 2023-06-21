@@ -1,17 +1,23 @@
 pipeline {
      agent any
-     environment {
-          registry = "alexandrec0sta/pd2223"
-          registryCredential = 'dockerhub_id'
-          dockerImage = ''
-     }
+       environment {
+          DOCKERHUB_CREDENTIALS = credentials('dockerhub_id')
+       }
      stages {
           stage("Build Image") {
                steps {
-                    script {
-                         dockerImage = docker.build registry + ":$BUILD_NUMBER"
-                    }
+                    sh 'docker build -t alexandrec0sta/pd2223 .'
                }
           }
+           stage('Login') {
+                steps {
+                  sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                }
+          }
+          stage('Push') {
+               steps {
+             sh 'docker push lexandrec0sta/pd2223'
+           }
+         }
     }
 }
