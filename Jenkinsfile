@@ -18,8 +18,8 @@ pipeline {
             }
         }
 
-        stage("Execute Ansible") {
+        // stage("Execute Ansible") {
 
-        }
+        // }
     }
 }
