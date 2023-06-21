@@ -4,7 +4,6 @@ pipeline {
         stage("Run Docker image") {
             steps {
                 sh 'docker build -t latest .'
-                sh '
             }
         }
 
