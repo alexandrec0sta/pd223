@@ -1,0 +1,15 @@
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\WebCrawler.exe
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\WebCrawler.dll
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\WebCrawler.deps.json
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\WebCrawler.runtimeconfig.json
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\WebCrawler.pdb
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\Newtonsoft.Json.dll
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\Npgsql.dll
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\System.Data.SqlClient.dll
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\runtimes\win-arm64\native\sni.dll
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\runtimes\win-x64\native\sni.dll
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\runtimes\win-x86\native\sni.dll
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\diogo.nunes\source\repos\WebCrawler\WebCrawler\bin\Release\net5.0\publish\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
