@@ -1,7 +1,7 @@
 pipeline {
      agent any
      tools {
-        docker 'docker'
+        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' '18.09'
      }
      stages {
         stage("Run Docker Compose File") {
