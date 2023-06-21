@@ -3,7 +3,7 @@ pipeline {
      stages {
         stage("Run Docker image") {
             steps {
-                sh 'docker build -t latest .'
+                sh 'docker build -t alexandrec0sta/pd2223:latest .'
             }
         }
 
