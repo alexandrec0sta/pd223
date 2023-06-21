@@ -1,16 +1,21 @@
 pipeline {
      agent any
-     tools {
-         nodejs 'nodejs'
-     }
      stages {
-        stage("Build FrontEnd") {
-            steps {
-                dir("${env.WORKSPACE}/fe-nasa") {
-                  sh "npm install"
-                  sh "npm run build"
-                }
+        stage("Run Docker Compose File") {
+            sh 'sudo docker-compose build'
+            sh 'sudo docker-compose up -d'
+        }
+
+        stage("Push Image to Docker Hub") {
+            // Log in to Docker Hub
+            withDockerRegistry(credentialsId: 'dockerhub_id', url: 'https://registry.hub.docker.com') {
+                // Push the Docker image to Docker Hub
+                sh 'docker-compose push'
             }
+        }
+
+        stage("Execute Ansible") {
+
         }
     }
 }
