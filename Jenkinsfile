@@ -1,5 +1,8 @@
 pipeline {
      agent any
+     tools {
+        docker 'docker'
+     }
      stages {
         stage("Run Docker Compose File") {
             steps {
