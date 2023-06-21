@@ -6,11 +6,6 @@ pipeline {
           dockerImage = ''
      }
      stages {
-          stage('Cloning our Git') {
-               steps {
-                    git 'https://github.com/alexandrec0sta/pd223.git'
-               }
-          }
           stage("Build Image") {
                steps {
                     script {
