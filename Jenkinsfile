@@ -5,10 +5,6 @@ pipeline {
           registryCredential = 'dockerhub_id'
           dockerImage = ''
      }
-     tools {
-         nodejs 'nodejs'
-         docker 'docker'
-     }
      stages {
           stage('Cloning our Git') {
                steps {
@@ -16,8 +12,10 @@ pipeline {
                }
           }
           stage("Build Image") {
-               script {
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+               steps {
+                    script {
+                         dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    }
                }
           }
     }
