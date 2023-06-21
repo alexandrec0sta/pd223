@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('🚀 Fetching Github repository')
-        {
-            steps {
-                git url: 'https://github.com/alexandrec0sta/pd223.git'
-            }
-        }
         stage('Run Docker image') {
             steps {
                 sh 'docker compose build'
