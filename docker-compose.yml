@@ -8,6 +8,4 @@ services:
     container_name: myapp
     volumes:
       - ./db:/db
-      - ./webcrawler:/webcrawler
-      - ./be:/be
       - ./fe-nasa:/fe-nasa
