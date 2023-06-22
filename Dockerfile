@@ -44,9 +44,9 @@ EXPOSE 5432
 # Executar FE 
 FROM node:16
 # Set the working directory to /app inside the container
-WORKDIR /app
+WORKDIR /fe
 # Copy app files
-COPY ./fe-nasa /app
+COPY ./fe-nasa /fe
 # COPY . .
 # ==== BUILD =====
 # Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
