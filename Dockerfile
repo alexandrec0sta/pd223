@@ -1,5 +1,3 @@
-FROM node:16
-
 # Executar base de dados
 # Use the official PostgreSQL image as the base image
 FROM postgres:latest
@@ -43,7 +41,7 @@ EXPOSE 5432
 # Executar BE
 
 # Executar FE 
-
+FROM node:16
 # Set the working directory to /app inside the container
 WORKDIR /app
 # Copy app files
