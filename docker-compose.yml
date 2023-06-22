@@ -6,7 +6,7 @@ services:
     container_name: sql-server
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=${podemos meter aqui a password ou tem de ser hardcoded?}
+      - SA_PASSWORD=BELELE
     ports:
       - 1433:1433
     volumes:
