@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+
         stage('Run Docker image') {
             steps {
                 sh 'docker-compose build'
