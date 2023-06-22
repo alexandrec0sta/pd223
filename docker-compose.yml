@@ -15,5 +15,5 @@ services:
   myapp:
     image: "alexandrec0sta/pd2223:latest"
     ports:
-      - 8090:8090
+      - 3000:3000
     container_name: "myapp"
