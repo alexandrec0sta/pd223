@@ -13,7 +13,7 @@ services:
     volumes:
       - ./data:/var/lib/postgresql/data 
   myapp:
-    image: "alexandrec0sta/pd223:latest"
+    image: "alexandrec0sta/pd2223:latest"
     ports:
       - 8090:8090
     container_name: "myapp"
