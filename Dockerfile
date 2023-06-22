@@ -18,28 +18,48 @@ EXPOSE 5432
 # -------------------------------------------------------------------------------------------------
 
 # Web Crawler
-# FROM mcr.microsoft.com/dotnet/runtime:5.0 AS base
-# WORKDIR /app
+FROM mcr.microsoft.com/dotnet/runtime:5.0 AS basewc
+WORKDIR /app
 
-# FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
-# WORKDIR /src
-# COPY ["WebCrawler/WebCrawler.csproj", "WebCrawler/"]
-# RUN dotnet restore "WebCrawler/WebCrawler.csproj"
-# COPY . .
-# WORKDIR "/src/WebCrawler"
-# RUN dotnet build "WebCrawler.csproj" -c Release -o /app/build
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS buildwc
+WORKDIR /src
+COPY ["WebCrawler/WebCrawler.csproj", "WebCrawler/"]
+RUN dotnet restore "WebCrawler/WebCrawler.csproj"
+COPY . .
+WORKDIR "/src/WebCrawler"
+RUN dotnet build "WebCrawler.csproj" -c Release -o /app/build
 
-# FROM build AS publish
-# RUN dotnet publish "WebCrawler.csproj" -c Release -o /app/publish
+FROM buildwc AS publishwc
+RUN dotnet publish "WebCrawler.csproj" -c Release -o /app/publish
 
-# FROM base AS final
-# WORKDIR /app
-# COPY --from=publish /app/publish .
-# ENTRYPOINT ["dotnet", "WebCrawler.dll"]
+FROM basewc AS finalwc
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "WebCrawler.dll"]
 
 # -------------------------------------------------------------------------------------------------
 
 # Executar BE
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS basebe
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS buildbe
+WORKDIR /src
+COPY ["WebAppiBE/WebAppiBE.csproj", "WebAppiBE/"]
+RUN dotnet restore "WebAppiBE/WebAppiBE.csproj"
+COPY . .
+WORKDIR "/src/WebAppiBE"
+RUN dotnet build "WebAppiBE.csproj" -c Release -o /app/build
+
+FROM buildbe AS publishbe
+RUN dotnet publish "WebAppiBE.csproj" -c Release -o /app/publish
+
+FROM basebe AS finalbe
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "WebAppiBE.dll"]
 
 # Executar FE 
 FROM node:16
