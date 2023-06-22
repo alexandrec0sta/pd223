@@ -2,11 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('SCM Checkout') {
-            credentialsId: 'git-PAT',
-            git url: 'git@github.com:alexandrec0sta/pd223.git'
-        }
-
         stage('Run Docker image') {
             steps {
                 sh 'docker-compose build'
