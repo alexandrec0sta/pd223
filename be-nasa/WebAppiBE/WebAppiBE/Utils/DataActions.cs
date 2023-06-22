@@ -13,7 +13,7 @@ namespace WebAppiBE.Utils
 {
     public class DataActions
     {
-        private static string connString = "Host=172.17.0.2;Port=5432;Database=PGDB;Username=admin;Password=12345;";
+        private static string connString = "Host=localhost;Port=5432;Database=PGDB;Username=admin;Password=12345;";
         public static DataTable ReadDataSetthroughReader(string query)
         {
             DataTable dataTable = new DataTable();

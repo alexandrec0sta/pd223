@@ -1,13 +1,19 @@
 version: "1.0"
 
 services:
-  sql-server:
-    image: mcr.microsoft.com/mssql/server
-    container_name: sql-server
-    environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=BELELE
+  db:
+    image: postgres
+    restart: always
     ports:
-      - 1433:1433
+      - 5432:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: PGDB
     volumes:
-      - ./data:/var/opt/mssql
+      - ./data:/var/lib/postgresql/data 
+  myapp:
+    image: "alexandrec0sta/pd223:latest"
+    ports:
+      - 8090:8090
+    container_name: "myapp"
