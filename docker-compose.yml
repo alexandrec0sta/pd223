@@ -7,7 +7,7 @@ services:
       - 3000:3000
     container_name: myapp
     volumes:
-      - ./db:/app
-      - ./webcrawler:/app
-      - ./be:/app
-      - ./fe:/app
+      - ./db:/db
+      - ./webcrawler:/webcrawler
+      - ./be:/be
+      - ./fe-nasa:/fe-nasa
