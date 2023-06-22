@@ -1,17 +1,6 @@
 version: "3.9"  # Adjust the version number according to your needs
 
 services:
-  db:
-    image: postgres
-    restart: always
-    ports:
-      - 5432:5432
-    environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: 12345
-      POSTGRES_DB: PGDB
-    volumes:
-      - ./data:/var/lib/postgresql/data 
   myapp:
     image: alexandrec0sta/pd2223:latest
     ports:
