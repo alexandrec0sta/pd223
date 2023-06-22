@@ -13,7 +13,7 @@ const Header: React.FC<Props> = ({}) => {
       <TouchableOpacity style={{height: '100%'}}>
         <View style={styles.navItem}>
           <Link href="/">
-          <Text style={[styles.text, styles.logo]}>PD Asteroids</Text>
+          <Text style={[styles.text, styles.logo]}>StarfallReact</Text>
           </Link>
         </View>
       </TouchableOpacity>
