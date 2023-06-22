@@ -14,7 +14,7 @@ namespace WebCrawler
     {
         static async Task Main(string[] args)
         {
-            string connectionString = "Host=172.17.0.2;Port=5432;Database=PGDB;Username=admin;Password=12345;";
+            string connectionString = "Host=localhost;Port=5432;Database=PGDB;Username=admin;Password=12345;";
 
             using (HttpClient client = new HttpClient())
             {
