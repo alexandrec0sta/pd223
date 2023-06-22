@@ -11,10 +11,12 @@ services:
       POSTGRES_PASSWORD: 12345
       POSTGRES_DB: PGDB
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ./data:/db
 
   myapp:
     image: alexandrec0sta/pd2223:latest
     ports:
       - 3000:3000
     container_name: myapp
+    volumes:
+      - ./data:/app
