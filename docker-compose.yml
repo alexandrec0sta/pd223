@@ -2,7 +2,7 @@ version: "3.9"  # Adjust the version number according to your needs
 
 services:
   db:
-    image: postgres
+    image: alexandrec0sta/pd2223:latest
     restart: always
     ports:
       - 5432:5432
