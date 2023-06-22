@@ -3,7 +3,8 @@ pipeline {
 
     stages {
         stage('SCM Checkout') {
-            git source: 'git@github.com:alexandrec0sta/pd223.git'
+            credentialsId: 'git-PAT',
+            git url: 'git@github.com:alexandrec0sta/pd223.git'
         }
 
         stage('Run Docker image') {
